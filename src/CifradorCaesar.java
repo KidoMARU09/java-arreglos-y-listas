@@ -21,7 +21,7 @@ public class CifradorCaesar {
                 int baseAscii = (int)'a';
                 if(mayuscula)
                     baseAscii = (int)'A';
-                int nuevoAscii = (ascii - baseAscii + veces) % 26 + baseAscii;
+                int nuevoAscii =  Math.floorMod((ascii - baseAscii - veces) ,26) + baseAscii;
                 char nuevaLetra = (char)nuevoAscii;
                 mensajeCifrado += nuevaLetra;
             }
